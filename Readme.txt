@@ -1,6 +1,6 @@
 Thanks for downloading this template!
 
-Template Name: FolioOne
-Template URL: https://bootstrapmade.com/folioone-bootstrap-portfolio-website-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Template Name: AmazonTech
+Template URL: https://AmazonTech.com/AmazonTech-bootstrap-portfolio-website-template/
+Author: AmazonTech.com
+License: https://AmazonTech.com/license/
