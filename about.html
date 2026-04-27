@@ -78,6 +78,59 @@
 .team-member .social-links a:hover {
   color: #007bff;
 }
+
+
+.dashboard-img .img-area{
+   position: relative; 
+    width: 25vw;
+    height: 25vw;
+    border-radius: 50%;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+   
+}
+.dashboard-img .img-area::before ,
+.dashboard-img .img-area::after{
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: conic-gradient(transparent, transparent,transparent ,#7cf03d);
+    transform: rotate(0deg);
+    animation:border-img 10s linear infinite;
+}
+.dashboard-img .img-area::after{
+    animation-delay: -5s;
+}
+@keyframes border-img {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.dashboard-img .img-area .img-item{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #1f242d;
+    border: 0.1px solid #1f242d;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    z-index: 1;
+}
+.dashboard-img .img-area .img-item img{
+    position: absolute;
+    display: block;
+    width: 100%;
+  
+    object-fit: cover;
+    top: 0px;
+    mix-blend-mode:lighten;
+}
 </style>
 
 </head>
@@ -185,12 +238,15 @@
         </div>
       </div>
 
-      <div class="col-lg-5" data-aos="zoom-in" data-aos-delay="250">
-        <figure class="profile-figure text-center text-lg-end">
-          <img src="assets/img/profile/profile.jpg" alt="Portrait of Mohabatullah Sahel" class="img-fluid profile-photo">
-        </figure>
-      </div>
 
+
+      <div class="dashboard-img col-lg-5" data-aos="zoom-in" data-aos-delay="250">
+         <div class="img-area">
+            <div class="img-item">
+                <img src="assets/img/profile/profile-square-11.png" alt="">
+            </div>
+         </div>
+       </div>
     </div>
     <!-- End Intro + Photo -->
 
@@ -640,7 +696,7 @@
                   <h3>Sara Wilson</h3>
                   <h4>UI/UX Designer</h4>
                   <div class="stars">
-                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-muted"></i>
                   </div>
                 </div>
               </div>
