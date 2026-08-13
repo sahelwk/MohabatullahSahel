@@ -201,4 +201,46 @@
     selector: '.glightbox'
   });
 
+  /**
+   * Theme toggle: initialize and handle theme switching
+   */
+  function updateThemeToggleUI(theme) {
+    const btn = document.getElementById('themeToggle');
+    if (!btn) return;
+    btn.setAttribute('aria-pressed', theme === 'dark');
+    const icon = btn.querySelector('.theme-icon');
+    if (!icon) return;
+    if (theme === 'dark') {
+      icon.classList.remove('bi-sun');
+      icon.classList.add('bi-moon');
+    } else {
+      icon.classList.remove('bi-moon');
+      icon.classList.add('bi-sun');
+    }
+  }
+
+  function setTheme(theme) {
+    try {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      updateThemeToggleUI(theme);
+    } catch (e) {
+      console.warn('Theme set failed', e);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggle = document.getElementById('themeToggle');
+    // reflect current theme
+    const current = document.documentElement.getAttribute('data-theme') || localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    updateThemeToggleUI(current);
+
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        const next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        setTheme(next);
+      });
+    }
+  });
+
 })();
