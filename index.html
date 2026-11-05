@@ -1,254 +1,664 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Mohabatullah Sahel</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohabatullah Sahel — Full-Stack Web Developer &amp; Software Engineer</title>
+  <meta name="description" content="Mohabatullah Sahel is a Full-Stack Web Developer and Software Engineer specializing in Laravel, Vue.js, REST APIs, and modern UI/UX design. Explore his work, skills, and experience.">
+  <meta name="keywords" content="Mohabatullah Sahel, Web Developer, Software Engineer, Laravel, Vue.js, Full-Stack Developer, UI/UX Designer, Kabul, Portfolio">
+  <meta name="author" content="Mohabatullah Sahel">
+  <meta property="og:title" content="Mohabatullah Sahel — Full-Stack Web Developer &amp; Software Engineer">
+  <meta property="og:description" content="Crafting fast, elegant and scalable digital products with Laravel, Vue.js and modern UI/UX.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/profile/indeximage3.png">
+  <link rel="icon" href="assets/img/logo.webp" type="image/webp">
 
-  <!-- Favicons -->
-  <link href="assets/img/logo.jpeg" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <script>/* Theme init - set data-theme before rendering to reduce flash */(function(){try{var s=localStorage.getItem('theme');var p=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;document.documentElement.setAttribute('data-theme', s|| (p? 'dark':'light'));}catch(e){}})();</script>
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <script>
+    /* Theme init — set before render to avoid flash */
+    (function () {
+      try {
+        var s = localStorage.getItem('mohabul-theme');
+        var p = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-theme', s || (p ? 'dark' : 'light'));
+      } catch (e) {}
+    })();
+  </script>
 
-  <!-- =======================================================
-  * Template Name: AmazonTech
-  * Template URL: https://AmazonTech.com/AmazonTech-bootstrap-portfolio-website-template/
-  * Updated: Aug 23 2025 with Bootstrap v5.3.7
-  * Author: AmazonTech.com
-  * License: https://AmazonTech.com/license/
-  ======================================================== -->
+  <link href="assets/css/portfolio.css" rel="stylesheet">
 </head>
 
-<body class="index-page">
+<body>
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container position-relative d-flex align-items-center justify-content-between">
+  <!-- Ambient background -->
+  <div class="bg-scene" aria-hidden="true">
+    <div class="grid-overlay"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="grain"></div>
+    <div class="particles" id="particles"></div>
+  </div>
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <img src="assets/img/avater3.png" alt="Mohabatullah Sahel" style="border-radius: 50px;">
-        <div class="brand-text">
-          <h1 class="sitename">Mohabatullah <span>Sahel</span></h1>
-          <p class="brand-tag">Creative Developer & Designer</p>
-        </div>
+  <!-- Custom cursor -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Mohabatullah Sahel — home">
+        <span class="brand-mark" aria-hidden="true">MS</span>
+        <span class="brand-text">Mohabatullah <b>Sahel</b></span>
       </a>
 
-      <nav id="navmenu" class="navmenu">
+      <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <!-- <li><a href="services.html">Services</a></li> -->
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a> -->
-            <!-- <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul> -->
-          </li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a class="nav-link active" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#services">Services</a></li>
+          <li><a class="nav-link" href="#skills">Skills</a></li>
+          <li><a class="nav-link" href="#experience">Experience</a></li>
+          <li><a class="nav-link" href="#work">Work</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <div class="header-social-links">
-        <a href="https://x.com/SahelWk" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://facebook.com/mohabatullah sahel" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://instagram.com/mohabatullah sahel" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://linkedin.com/in/mohabatullah sahel" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark / light theme" title="Toggle theme">
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+        <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle color theme" title="Toggle theme" type="button">
-        <i class="bi theme-icon bi-moon" aria-hidden="true"></i>
-        <span class="visually-hidden">Toggle theme</span>
-      </button>
-
     </div>
   </header>
 
-  <main class="main">
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row gy-4 align-items-center">
-          <div class="col-lg-6 order-2 order-lg-1">
-            <div class="hero-content">
-              <span class="hero-badge">Available for freelance, product work, and meaningful collaborations</span>
-              <h1 data-aos="fade-up" data-aos-delay="200">Designing <span class="highlight">smart digital experiences</span> with clarity and impact.</h1>
-
-              <h2 data-aos="fade-up" data-aos-delay="300">I’m a <span class="typed" data-typed-items="Web Developer, UI/UX Designer, Software Engineer, Frontend Developer, Backend Developer"></span></h2>
-
-              <p data-aos="fade-up" data-aos-delay="400">
-                I create polished websites and web applications that blend strong strategy, modern design, and reliable development. From business platforms to creative portfolios, every experience is built to feel intuitive and memorable.
-              </p>
-
-              <div class="hero-actions" data-aos="fade-up" data-aos-delay="500">
-                <a href="portfolio.html" class="btn btn-primary">Explore My Work</a>
-                <a href="contact.html" class="btn btn-outline">Start a Conversation</a>
-              </div>
-
-              <div class="social-links" data-aos="fade-up" data-aos-delay="600">
-                <a href="https://x.com/SahelWk" target="_blank" rel="noreferrer"><i class="bi bi-twitter-x"></i></a>
-                <a href="https://linkedin.com/in/mohabatullah sahel" target="_blank" rel="noreferrer"><i class="bi bi-linkedin"></i></a>
-                <a href="https://github.com/SahelWk" target="_blank" rel="noreferrer"><i class="bi bi-github"></i></a>
-                <a href="https://facebook.com/mohabatullah sahel" target="_blank" rel="noreferrer"><i class="bi bi-facebook"></i></a>
-              </div>
-            </div>
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="home" class="hero section">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="hero-badge" data-reveal><span class="pulse" aria-hidden="true"></span> Available for freelance, product work &amp; collaborations</span>
+          <p class="hero-greet" data-reveal style="--d:90ms">Hi, I'm</p>
+          <h1 class="hero-name" data-reveal style="--d:160ms">Mohabatullah <span class="grad">Sahel</span></h1>
+          <div class="hero-role" data-reveal style="--d:230ms">
+            <span class="typed-role" id="typedRole"></span><span class="caret" aria-hidden="true"></span>
           </div>
-
-          <div class="col-lg-6 order-1 order-lg-2">
-            <div class="hero-image" data-aos="zoom-in" data-aos-delay="300">
-              <div class="image-wrapper">
-                <img src="assets/img/profile/indeximage3.png" alt="Mohabatullah Sahel" class="img-fluid">
-                <div class="floating-elements">
-                  <div class="floating-card design" data-aos="fade-left" data-aos-delay="700">
-                    <i class="bi bi-palette"></i>
-                    <span>UI Design</span>
-                  </div>
-                  <div class="floating-card code" data-aos="fade-right" data-aos-delay="800">
-                    <i class="bi bi-code-slash"></i>
-                    <span>Development</span>
-                  </div>
-                  <div class="floating-card creativity" data-aos="fade-up" data-aos-delay="900">
-                    <i class="bi bi-lightbulb"></i>
-                    <span>Strategy</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <p class="hero-intro" data-reveal style="--d:300ms">
+            Full-Stack Web Developer &amp; Software Engineer crafting fast, elegant, and scalable digital
+            products with Laravel, Vue.js and modern UI/UX.
+          </p>
+          <div class="hero-actions" data-reveal style="--d:370ms">
+            <a class="btn btn-primary" href="#work" data-magnetic><span class="btn-inner">View My Work <i class="bi bi-arrow-right" aria-hidden="true"></i></span></a>
+            <a class="btn btn-ghost" href="assets/Mohabatullah-Sahel-Resume.pdf" download data-magnetic><span class="btn-inner">Download CV <i class="bi bi-download" aria-hidden="true"></i></span></a>
+          </div>
+          <div class="hero-social" data-reveal style="--d:440ms">
+            <a class="social-btn" href="https://github.com/SahelWk" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+            <a class="social-btn" href="https://x.com/SahelWk" target="_blank" rel="noreferrer" aria-label="X (Twitter)"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a class="social-btn" href="https://linkedin.com/in/mohabatullah sahel" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+            <a class="social-btn" href="https://facebook.com/mohabatullah sahel" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a class="social-btn" href="https://instagram.com/mohabatullah sahel" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
           </div>
         </div>
 
-        <div class="row gy-4 hero-highlights">
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="highlight-card">
-              <i class="bi bi-bullseye"></i>
-              <h3>Purposeful UX</h3>
-              <p>Every interaction is shaped around clarity, ease, and meaningful engagement.</p>
-            </div>
+        <div class="hero-visual" data-reveal="right" style="--d:200ms">
+          <div class="hero-ring ring-1" aria-hidden="true"></div>
+          <div class="hero-ring ring-2" aria-hidden="true"></div>
+          <div class="hero-photo">
+            <img src="assets/img/profile/indeximage3.png" alt="Portrait of Mohabatullah Sahel — Web Developer" width="330" height="330">
           </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="700">
-            <div class="highlight-card">
-              <i class="bi bi-speedometer2"></i>
-              <h3>Fast & scalable</h3>
-              <p>Modern frontends and strong architecture for smooth performance and growth.</p>
-            </div>
-          </div>
-          <div class="col-md-4" data-aos="fade-up" data-aos-delay="800">
-            <div class="highlight-card">
-              <i class="bi bi-globe2"></i>
-              <h3>Cross-platform ready</h3>
-              <p>Responsive experiences that look and feel excellent on every device.</p>
-            </div>
-          </div>
+          <div class="float-card fc-1"><i class="bi bi-palette" aria-hidden="true"></i>UI/UX Design</div>
+          <div class="float-card fc-2"><i class="bi bi-code-slash" aria-hidden="true"></i>Laravel</div>
+          <div class="float-card fc-3"><i class="bi bi-braces" aria-hidden="true"></i>Vue.js</div>
+          <div class="float-card fc-4"><i class="bi bi-plug" aria-hidden="true"></i>REST APIs</div>
         </div>
       </div>
-    </section><!-- /Hero Section -->
+    </section>
 
-    <section class="section about-preview">
+    <!-- ============ STATS ============ -->
+    <section class="stats-bar" aria-label="Quick statistics">
+      <div class="container stats-grid">
+        <div data-reveal>
+          <div class="stat-num"><span data-count="8">0</span><span class="suffix">+</span></div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div data-reveal style="--d:80ms">
+          <div class="stat-num"><span data-count="7">0</span><span class="suffix">+</span></div>
+          <div class="stat-label">Projects Delivered</div>
+        </div>
+        <div data-reveal style="--d:160ms">
+          <div class="stat-num"><span data-count="15">0</span><span class="suffix">+</span></div>
+          <div class="stat-label">Technologies &amp; Tools</div>
+        </div>
+        <div data-reveal style="--d:240ms">
+          <div class="stat-num"><span data-count="100">0</span><span class="suffix">+</span></div>
+          <div class="stat-label">Students Trained</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
       <div class="container">
-        <div class="row gy-4 align-items-center">
-          <div class="col-lg-6" data-aos="fade-right">
-            <div class="about-preview-card">
-              <span class="section-label">What I bring</span>
-              <h2>Thoughtful digital products built with creativity and precision.</h2>
-              <p>I combine design thinking with technical execution to build websites that are beautiful, functional, and aligned with business goals.</p>
-              <a href="about.html" class="text-link">Learn more about me <i class="bi bi-arrow-right"></i></a>
+        <div class="section-head" data-reveal>
+          <span class="section-label">About Me</span>
+          <h2 class="section-title">A developer who designs and builds.</h2>
+          <p class="section-sub">Turning ideas into clean, scalable, and user-friendly digital products.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text" data-reveal="left">
+            <p class="lead">
+              I'm <strong>Mohabatullah Sahel</strong> — a dedicated Web Developer &amp; Software Engineer
+              specializing in <strong>Laravel, Vue.js, API development,</strong> and modern
+              <strong>UI/UX design</strong>. I build scalable, fast, user-friendly applications, from custom
+              dashboards to complete management systems.
+            </p>
+            <p>
+              My background includes software development, reporting, and teaching technology. I've built
+              advanced factory management systems, guided hundreds of students in programming, and designed
+              intuitive interfaces — always solving real problems through structured, thoughtful code.
+            </p>
+
+            <div class="facts">
+              <div class="fact" data-reveal>
+                <i class="bi bi-briefcase" aria-hidden="true"></i>
+                <div><h4>Experience</h4><p>8+ years in web &amp; software development</p></div>
+              </div>
+              <div class="fact" data-reveal style="--d:80ms">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                <div><h4>Location</h4><p>Kabul, Afghanistan</p></div>
+              </div>
+              <div class="fact" data-reveal style="--d:140ms">
+                <i class="bi bi-stack" aria-hidden="true"></i>
+                <div><h4>Specialization</h4><p>Full-Stack Web Development</p></div>
+              </div>
+              <div class="fact" data-reveal style="--d:200ms">
+                <i class="bi bi-mortarboard" aria-hidden="true"></i>
+                <div><h4>Education</h4><p>BSc Computer Science</p></div>
+              </div>
             </div>
           </div>
-          <div class="col-lg-6" data-aos="fade-left">
-            <div class="tech-stack">
-              <span class="tech-pill">Laravel</span>
-              <span class="tech-pill">Vue.js</span>
-              <span class="tech-pill">Bootstrap</span>
-              <span class="tech-pill">UI/UX</span>
-              <span class="tech-pill">Frontend</span>
-              <span class="tech-pill">Backend</span>
+
+          <div class="about-visual" data-reveal="right">
+            <div class="about-frame">
+              <img src="assets/img/profile/profile-square-11.png" alt="Mohabatullah Sahel" loading="lazy">
             </div>
+            <div class="exp-tag"><b>8+</b><span>Years of experience crafting software</span></div>
+            <div class="mono-badge" aria-hidden="true">MS</div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ============ SERVICES ============ -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-label">What I Do</span>
+          <h2 class="section-title">Services that move products forward.</h2>
+          <p class="section-sub">End-to-end expertise spanning design, development, and deployment.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card" data-reveal>
+            <div class="svc-icon"><i class="bi bi-layers" aria-hidden="true"></i></div>
+            <h3>Full-Stack Web Development</h3>
+            <p>Complete applications from database to UI using Laravel, Vue.js and modern frontend tooling.</p>
+          </article>
+          <article class="service-card" data-reveal style="--d:80ms">
+            <div class="svc-icon"><i class="bi bi-window" aria-hidden="true"></i></div>
+            <h3>Frontend Development</h3>
+            <p>Interactive, responsive interfaces with Vue.js, React.js, JavaScript and Tailwind CSS.</p>
+          </article>
+          <article class="service-card" data-reveal style="--d:140ms">
+            <div class="svc-icon"><i class="bi bi-plug" aria-hidden="true"></i></div>
+            <h3>Backend &amp; API Development</h3>
+            <p>Secure REST APIs and backend systems built with PHP, Laravel and Python/Django.</p>
+          </article>
+          <article class="service-card" data-reveal style="--d:200ms">
+            <div class="svc-icon"><i class="bi bi-palette" aria-hidden="true"></i></div>
+            <h3>UI/UX Design</h3>
+            <p>Clean, modern, user-centered interfaces that balance clarity with visual appeal.</p>
+          </article>
+          <article class="service-card" data-reveal style="--d:260ms">
+            <div class="svc-icon"><i class="bi bi-database" aria-hidden="true"></i></div>
+            <h3>Database Design &amp; Management</h3>
+            <p>Efficient schemas and query optimization across MySQL, PostgreSQL, MongoDB and more.</p>
+          </article>
+          <article class="service-card" data-reveal style="--d:320ms">
+            <div class="svc-icon"><i class="bi bi-search" aria-hidden="true"></i></div>
+            <h3>CMS, E-commerce &amp; SEO</h3>
+            <p>WordPress solutions and technical SEO that help businesses get found and grow.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ JOURNEY ============ -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-label">My Journey</span>
+          <h2 class="section-title">Milestones that shaped my path.</h2>
+        </div>
+        <div class="journey">
+          <div class="journey-item" data-reveal>
+            <span class="j-year">2015</span>
+            <h4>Started Teaching Programming</h4>
+            <p>Taught Python, C++ and Java fundamentals to students.</p>
+          </div>
+          <div class="journey-item" data-reveal style="--d:80ms">
+            <span class="j-year">2018</span>
+            <h4>Academic Center Instructor</h4>
+            <p>Guided students in programming as a technology instructor.</p>
+          </div>
+          <div class="journey-item" data-reveal style="--d:160ms">
+            <span class="j-year">2020</span>
+            <h4>Full-Stack Journey</h4>
+            <p>Began building production apps with Laravel and Vue.js.</p>
+          </div>
+          <div class="journey-item" data-reveal style="--d:240ms">
+            <span class="j-year">2024–25</span>
+            <h4>Factory System Developer</h4>
+            <p>Built production, inventory, payroll and raw material systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-label">Skills &amp; Stack</span>
+          <h2 class="section-title">A toolkit built for real products.</h2>
+          <p class="section-sub">Technologies I use daily to design, build, and ship reliable software.</p>
+        </div>
+
+        <div class="skills-block">
+          <div class="skills-list">
+            <div class="skill-group" data-reveal>
+              <h3><i class="bi bi-window" aria-hidden="true"></i> Frontend</h3>
+              <div class="chips">
+                <span class="chip"><i class="bi bi-filetype-html" aria-hidden="true"></i>HTML</span>
+                <span class="chip"><i class="bi bi-filetype-css" aria-hidden="true"></i>CSS</span>
+                <span class="chip"><i class="bi bi-filetype-js" aria-hidden="true"></i>JavaScript</span>
+                <span class="chip">Tailwind CSS</span>
+                <span class="chip">Bootstrap 5</span>
+                <span class="chip">Vue.js</span>
+                <span class="chip">React.js</span>
+                <span class="chip">jQuery</span>
+              </div>
+            </div>
+
+            <div class="skill-group" data-reveal>
+              <h3><i class="bi bi-server" aria-hidden="true"></i> Backend</h3>
+              <div class="chips">
+                <span class="chip"><i class="bi bi-filetype-php" aria-hidden="true"></i>PHP</span>
+                <span class="chip">Laravel</span>
+                <span class="chip">CodeIgniter</span>
+                <span class="chip">Python</span>
+                <span class="chip">Django</span>
+                <span class="chip">Node.js</span>
+              </div>
+            </div>
+
+            <div class="skill-group" data-reveal>
+              <h3><i class="bi bi-database" aria-hidden="true"></i> Database</h3>
+              <div class="chips">
+                <span class="chip">MySQL</span><span class="chip">PostgreSQL</span>
+                <span class="chip">MongoDB</span><span class="chip">MariaDB</span>
+                <span class="chip">SQL Server</span><span class="chip">SQLite</span>
+              </div>
+            </div>
+
+            <div class="skill-group" data-reveal>
+              <h3><i class="bi bi-tools" aria-hidden="true"></i> Tools &amp; Ops</h3>
+              <div class="chips">
+                <span class="chip"><i class="bi bi-git" aria-hidden="true"></i>Git / GitHub / GitLab</span>
+                <span class="chip">Docker</span><span class="chip">Postman</span>
+                <span class="chip">MySQL Workbench</span><span class="chip">Firebase</span>
+                <span class="chip">AWS</span><span class="chip">WordPress</span>
+              </div>
+            </div>
+
+            <div class="skill-group" data-reveal>
+              <h3><i class="bi bi-graph-up" aria-hidden="true"></i> SEO &amp; Others</h3>
+              <div class="chips">
+                <span class="chip">Technical SEO</span><span class="chip">On-Page SEO</span>
+                <span class="chip">Backlinks</span><span class="chip">Google Analytics</span>
+                <span class="chip">Search Console</span><span class="chip">SEMrush</span>
+                <span class="chip">C++ / Java / C#</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tech-cloud" data-reveal="right">
+            <div class="cloud-center">My<br>Stack</div>
+            <span class="cloud-node cn-1">Laravel</span>
+            <span class="cloud-node cn-2">PHP</span>
+            <span class="cloud-node cn-3">Vue.js</span>
+            <span class="cloud-node cn-4">MySQL</span>
+            <span class="cloud-node cn-5">JavaScript</span>
+            <span class="cloud-node cn-6">React</span>
+            <span class="cloud-node cn-7">Git</span>
+            <span class="cloud-node cn-8">Docker</span>
+            <i class="cloud-line ln-1" aria-hidden="true"></i>
+            <i class="cloud-line ln-2" aria-hidden="true"></i>
+            <i class="cloud-line ln-3" aria-hidden="true"></i>
+            <i class="cloud-line ln-4" aria-hidden="true"></i>
+            <i class="cloud-line ln-5" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="section experience">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-label">Professional Experience</span>
+          <h2 class="section-title">Where I've built and delivered.</h2>
+          <p class="section-sub">A timeline of roles across private companies and public institutions.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item" data-reveal>
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
+              <div class="tl-meta">
+                <span class="tl-date">2023 — Present</span>
+                <span class="tl-company">Administration Office of the President (AOP) · Kabul</span>
+              </div>
+              <h3>Web Developer</h3>
+              <ul>
+                <li>Engineered mobile-friendly web platforms with HTML, CSS, Tailwind and Bootstrap 5.</li>
+                <li>Built interactive front-end components using Vue.js, React.js, JavaScript and jQuery.</li>
+                <li>Maintained multiple databases and integrated Firebase for real-time updates.</li>
+                <li>Developed modular UI, ensured security, and optimized SPAs for performance.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="tl-item" data-reveal style="--d:80ms">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
+              <div class="tl-meta">
+                <span class="tl-date">2023 — 2024</span>
+                <span class="tl-company">JRMClix (Remote) · Australia</span>
+              </div>
+              <h3>Software Developer</h3>
+              <ul>
+                <li>Designed, developed and maintained software solutions across various platforms.</li>
+                <li>Collaborated with cross-functional teams to implement innovative features.</li>
+                <li>Wrote clean, efficient, maintainable code following industry best practices.</li>
+                <li>Conducted testing, developed APIs, performed code reviews, and ensured security.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="tl-item" data-reveal style="--d:160ms">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
+              <div class="tl-meta">
+                <span class="tl-date">2022 — 2023</span>
+                <span class="tl-company">Independent Administrative Reform &amp; Civil Service · Kabul</span>
+              </div>
+              <h3>Web Developer</h3>
+              <ul>
+                <li>Developed responsive web applications with HTML, CSS, Tailwind and Bootstrap 5.</li>
+                <li>Built dynamic front-end components with JavaScript, jQuery, Vue.js and React.js.</li>
+                <li>Optimized database performance across MySQL, SQLite, SQL Server, PostgreSQL and MongoDB.</li>
+                <li>Implemented secure authentication systems and efficient SQL queries.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="tl-item" data-reveal style="--d:240ms">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <article class="tl-card">
+              <div class="tl-meta">
+                <span class="tl-date">2017 — 2020</span>
+                <span class="tl-company">Hajar ICT Solutions · Kabul</span>
+              </div>
+              <h3>Web Developer</h3>
+              <ul>
+                <li>Developed responsive websites with HTML, CSS, JS, Bootstrap, Tailwind, React and Vue.js.</li>
+                <li>Implemented CMS platforms (WordPress, Drupal, Joomla) and optimized SEO.</li>
+                <li>Created RESTful APIs, ensured security, and managed hosting environments.</li>
+                <li>Collaborated in Agile teams and maintained version control with Git.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WORK / PROJECTS ============ -->
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-label">Selected Work</span>
+          <h2 class="section-title">Projects I've designed &amp; built.</h2>
+          <p class="section-sub">Real products — from e-learning and e-commerce to government systems.</p>
+        </div>
+
+        <div class="work-grid">
+          <button class="project-card" data-reveal data-img="assets/img/portfolio/edtecheqa.png" data-title="Edtech E-Learning Portal" data-cat="Web Development" data-desc="A full-featured e-learning platform for online education, with course management, student dashboards and a learning environment." data-role="Full-Stack Development" data-url="https://edtecheqra.com/front" data-tags="Laravel|MySQL|JavaScript|jQuery|SEO">
+            <span class="project-thumb"><img src="assets/img/portfolio/edtecheqa.png" alt="Edtech E-Learning Portal" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
+            <span class="project-body">
+              <span class="project-cat">Web Development</span>
+              <h3>Edtech E-Learning Portal</h3>
+              <p>An online learning platform with courses, dashboards and management tools.</p>
+              <span class="project-tags"><span>Laravel</span><span>MySQL</span><span>jQuery</span><span>SEO</span></span>
+            </span>
+          </button>
+
+          <button class="project-card" data-reveal style="--d:80ms" data-img="assets/img/portfolio/patientSystem.png" data-title="Doctor Prescription System" data-cat="Health · Web App" data-desc="A digital prescription and patient management system that streamlines doctor workflows and medical record handling." data-role="Frontend & Backend Development" data-url="https://doctor.hamdardgroup.com/" data-tags="Laravel|Angular|Tailwind CSS">
+            <span class="project-thumb"><img src="assets/img/portfolio/patientSystem.png" alt="Doctor Prescription System" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
+            <span class="project-body">
+              <span class="project-cat">Health · Web App</span>
+              <h3>Doctor Prescription System</h3>
+              <p>Digital prescriptions and patient management for modern clinics.</p>
+              <span class="project-tags"><span>Laravel</span><span>Angular</span><span>Tailwind</span></span>
+            </span>
+          </button>
+
+          <button class="project-card" data-reveal style="--d:160ms" data-img="assets/img/portfolio/ageops.png" data-title="AGEOPS E-Tendering" data-cat="Government · Procurement" data-desc="An electronic tendering and procurement platform enabling transparent public bidding, tender publishing and vendor management." data-role="Full-Stack Development" data-url="https://tenders.ageops.af" data-tags="PHP|Node.js|Laravel|Angular|React|MariaDB|AWS">
+            <span class="project-thumb"><img src="assets/img/portfolio/ageops.png" alt="AGEOPS E-Tendering system" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
+            <span class="project-body">
+              <span class="project-cat">Government · Procurement</span>
+              <h3>AGEOPS E-Tendering</h3>
+              <p>A transparent e-tendering and procurement platform.</p>
+              <span class="project-tags"><span>Laravel</span><span>Angular</span><span>Node.js</span><span>AWS</span></span>
+            </span>
+          </button>
+
+          <button class="project-card" data-reveal data-img="assets/img/portfolio/afzon.png" data-title="Afzon E-commerce" data-cat="E-commerce" data-desc="An e-commerce marketplace with product catalog, cart and checkout built for online retail." data-role="Full-Stack Development" data-url="https://afzon.af/" data-tags="Laravel|Tailwind CSS|SEO">
+            <span class="project-thumb"><img src="assets/img/portfolio/afzon.png" alt="Afzon E-commerce website" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
+            <span class="project-body">
+              <span class="project-cat">E-commerce</span>
+              <h3>Afzon E-commerce</h3>
+              <p>An online marketplace for browsing and buying products.</p>
+              <span class="project-tags"><span>Laravel</span><span>Tailwind</span><span>SEO</span></span>
+            </span>
+          </button>
+
+          <button class="project-card" data-reveal style="--d:80ms" data-img="assets/img/portfolio/baryatech.jpg" data-title="Barya Tech Website" data-cat="Corporate Website" data-desc="A corporate website for Barya Tech, delivering a clear brand presence and optimized web experience." data-role="Development & SEO" data-url="https://baryatech.com/" data-tags="WordPress|HTML/CSS|SEO">
+            <span class="project-thumb"><img src="assets/img/portfolio/baryatech.jpg" alt="Barya Tech corporate website" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
+            <span class="project-body">
+              <span class="project-cat">Corporate Website</span>
+              <h3>Barya Tech Website</h3>
+              <p>A polished corporate web presence for Barya Tech.</p>
+              <span class="project-tags"><span>WordPress</span><span>HTML/CSS</span><span>SEO</span></span>
+            </span>
+          </button>
+
+          <button class="project-card" data-reveal style="--d:160ms" data-img="assets/img/portfolio/aop.png" data-title="Lawyers Information Management System" data-cat="Government · Management System" data-desc="An information management system for lawyers that tracks records, registrations and case data." data-role="Full-Stack Development" data-url="http://gdcma.aop.gov.af/" data-tags="Laravel|MySQL|Bootstrap|AJAX">
+            <span class="project-thumb"><img src="assets/img/portfolio/aop.png" alt="Lawyers information management system" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
+            <span class="project-body">
+              <span class="project-cat">Government · Management</span>
+              <h3>Lawyers Info Management</h3>
+              <p>Manages lawyer records, registrations and case data.</p>
+              <span class="project-tags"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-label">Education &amp; Languages</span>
+          <h2 class="section-title">The foundation behind the craft.</h2>
+        </div>
+
+        <div class="edu-grid">
+          <article class="edu-card" data-reveal>
+            <div class="edu-icon"><i class="bi bi-mortarboard" aria-hidden="true"></i></div>
+            <span class="edu-date">2016 — 2021</span>
+            <h3>Bachelor of Computer Science</h3>
+            <p class="edu-inst">Khost Shaikh Zayed University</p>
+            <p class="edu-detail">Focused foundation in computer science and software principles.</p>
+          </article>
+          <article class="edu-card" data-reveal style="--d:80ms">
+            <div class="edu-icon"><i class="bi bi-translate" aria-hidden="true"></i></div>
+            <span class="edu-date">2017 — 2018</span>
+            <h3>Certificate in English Language</h3>
+            <p class="edu-inst">Kabul Center Language Institute</p>
+            <p class="edu-detail">Advanced English training strengthening professional communication.</p>
+          </article>
+          <article class="edu-card" data-reveal style="--d:160ms">
+            <div class="edu-icon"><i class="bi bi-book" aria-hidden="true"></i></div>
+            <span class="edu-date">2006 — 2015</span>
+            <h3>High School Diploma</h3>
+            <p class="edu-inst">Alhajad Langar High School</p>
+            <p class="edu-detail">Secondary education foundation in science and mathematics.</p>
+          </article>
+        </div>
+
+        <div class="langs">
+          <div class="lang-card" data-reveal>
+            <i class="bi bi-translate" style="color:var(--accent);font-size:1.3rem" aria-hidden="true"></i>
+            <div><div class="lang-name">Pashto</div><div class="lang-level">Native</div></div>
+          </div>
+          <div class="lang-card" data-reveal style="--d:80ms">
+            <i class="bi bi-translate" style="color:var(--accent);font-size:1.3rem" aria-hidden="true"></i>
+            <div><div class="lang-name">English</div><div class="lang-level">C1 — Full Professional</div></div>
+          </div>
+          <div class="lang-card" data-reveal style="--d:160ms">
+            <i class="bi bi-translate" style="color:var(--accent);font-size:1.3rem" aria-hidden="true"></i>
+            <div><div class="lang-name">Dari</div><div class="lang-level">C1 — Full Professional</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <span class="section-label">Get In Touch</span>
+          <h2 class="section-title">Let's build something great together.</h2>
+          <p class="section-sub">Have a project, opportunity, or idea? I'd love to hear about it.</p>
+        </div>
+
+        <div class="contact-inner">
+          <div class="contact-info" data-reveal="left">
+            <h3>Open to meaningful work.</h3>
+            <p>Whether it's a new product, a collaboration, or a question about my experience — my inbox is always open.</p>
+
+            <div class="ci-item">
+              <div class="ci-icon"><i class="bi bi-envelope" aria-hidden="true"></i></div>
+              <div><h4>Email</h4><a href="mailto:mohabatullahsahel.afg@gmail.com">mohabatullahsahel.afg@gmail.com</a></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon"><i class="bi bi-phone" aria-hidden="true"></i></div>
+              <div><h4>Phone / WhatsApp</h4><a href="tel:+937705908762">+93 77 059 08762</a></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon"><i class="bi bi-geo-alt" aria-hidden="true"></i></div>
+              <div><h4>Location</h4><p>Kabul, Afghanistan (open to remote)</p></div>
+            </div>
+            <div class="ci-item">
+              <div class="ci-icon"><i class="bi bi-file-earmark-text" aria-hidden="true"></i></div>
+              <div><h4>Resume</h4><a href="assets/Mohabatullah-Sahel-Resume.pdf" download>Download my CV</a></div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" action="forms/contact.php" method="post" data-reveal="right">
+            <div class="form-row">
+              <div class="field">
+                <label for="cf-name">Your Name</label>
+                <input id="cf-name" type="text" name="name" placeholder="Jane Doe" required>
+              </div>
+              <div class="field">
+                <label for="cf-email">Your Email</label>
+                <input id="cf-email" type="email" name="email" placeholder="jane@example.com" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="cf-subject">Subject</label>
+              <input id="cf-subject" type="text" name="subject" placeholder="Let's work together" required>
+            </div>
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit"><span class="btn-inner">Send Message <i class="bi bi-send" aria-hidden="true"></i></span></button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer id="footer" class="footer">
-
-    <div class="container">
-      <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Mohabatullah Sahel</strong> <span>All Rights Reserved<br></span></p>
-      </div>
-      <div class="social-links d-flex justify-content-center">
-        <!-- <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a> -->
-        <a href="https://x.com/SahelWk" class="twitter"><i class="bi bi-twitter-x"></i></a>
-        <a href="https://facebook.com/mohabatullah sahel" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://instagram.com/mohabatullah sahel" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://linkedin.com/in/mohabatullah sahel" class="linkedin"><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://AmazonTech.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://linkedin.com/in/mohabatullah sahel">Mohabatullah sahel</a>
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="brand" aria-label="Mohabatullah Sahel — home">
+        <span class="brand-mark" aria-hidden="true">MS</span>
+        <span class="brand-text">Mohabatullah <b>Sahel</b></span>
+      </a>
+      <p class="footer-copy">© <span id="year">2026</span> Mohabatullah Sahel · Full-Stack Web Developer &amp; Software Engineer</p>
+      <div class="footer-social">
+        <a class="social-btn" href="https://github.com/SahelWk" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
+        <a class="social-btn" href="https://linkedin.com/in/mohabatullah sahel" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+        <a class="social-btn" href="https://x.com/SahelWk" target="_blank" rel="noreferrer" aria-label="X (Twitter)"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
       </div>
     </div>
-
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Project modal -->
+  <div class="modal" id="projectModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Project details">
+    <div class="modal-box" id="projectModalBox" tabindex="-1"></div>
+  </div>
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+  <!-- Scroll to top -->
+  <a href="#home" class="scroll-top" id="scrollTop" aria-label="Scroll back to top"><i class="bi bi-arrow-up" aria-hidden="true"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  <script src="assets/js/app.js"></script>
 </body>
-
 </html>
