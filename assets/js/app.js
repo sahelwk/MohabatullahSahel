@@ -201,10 +201,15 @@
   /* ---------- Project modal ---------- */
   const modal = $("#projectModal");
   const modalBox = $("#projectModalBox");
+  let modalTrigger = null;
+  if (modal) modal.inert = true;
   function closeModal() {
     if (!modal) return;
     modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    modal.inert = true;
     document.body.style.overflow = "";
+    if (modalTrigger) modalTrigger.focus({ preventScroll: true });
   }
   function openModal(data) {
     if (!modal || !modalBox) return;
@@ -223,11 +228,18 @@
       (data.url ? '<a class="btn btn-primary" target="_blank" rel="noreferrer" href="' + data.url + '"><span class="btn-inner">Visit Live Site</span></a>' : "") +
       "</div></div>";
     modal.classList.add("open");
+    modal.inert = false;
+    modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
     $$("[data-self-close]", modalBox).forEach((b) => b.addEventListener("click", closeModal));
+    $("[data-self-close]", modalBox).focus({ preventScroll: true });
   }
   $$(".project-card").forEach((card) => {
-    card.addEventListener("click", () => openModal({
+    const detailsButton = $(".project-details", card);
+    if (!detailsButton) return;
+    detailsButton.addEventListener("click", () => {
+      modalTrigger = detailsButton;
+      openModal({
       img: card.getAttribute("data-img"),
       title: card.getAttribute("data-title"),
       cat: card.getAttribute("data-cat"),
@@ -235,24 +247,41 @@
       role: card.getAttribute("data-role"),
       url: card.getAttribute("data-url"),
       tags: (card.getAttribute("data-tags") || "").split("|")
-    }));
+      });
+    });
   });
 
   /* ---------- Project filters ---------- */
   $$(".filter-btn").forEach((button) => {
     button.addEventListener("click", () => {
       const filter = button.dataset.filter;
-      $$(".filter-btn").forEach((b) => b.classList.toggle("active", b === button));
+      $$(".filter-btn").forEach((b) => {
+        b.classList.toggle("active", b === button);
+        b.setAttribute("aria-pressed", String(b === button));
+      });
       $$(".project-card").forEach((card) => {
         const category = (card.dataset.cat || "").toLowerCase();
         const group = card.dataset.filterGroup || (category.includes("management") || category.includes("government") ? "management" : category.includes("corporate") ? "other" : "web");
         card.hidden = filter !== "all" && group !== filter;
+        if (!card.hidden) card.classList.add("in");
       });
+      const count = $$(".project-card").filter((card) => !card.hidden).length;
+      const countLabel = $("#projectCount");
+      if (countLabel) countLabel.textContent = `${count} ${count === 1 ? "project" : "projects"}`;
     });
   });
   if (modal) {
     modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
+    document.addEventListener("keydown", (e) => {
+      if (!modal.classList.contains("open")) return;
+      if (e.key === "Escape") closeModal();
+      if (e.key === "Tab") {
+        const focusable = $$("button, a[href]", modalBox);
+        const first = focusable[0], last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
   }
 
   /* ---------- Contact form ---------- */

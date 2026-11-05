@@ -29,7 +29,7 @@
     })();
   </script>
 
-  <link href="assets/css/portfolio.css" rel="stylesheet">
+  <link href="assets/css/portfolio.css?v=20261105-work" rel="stylesheet">
 </head>
 
 <body>
@@ -142,7 +142,7 @@
           <div class="stat-label">Years in web development</div>
         </div>
         <div data-reveal style="--d:80ms">
-          <div class="stat-num"><span data-count="6">0</span><span class="suffix">+</span></div>
+          <div class="stat-num"><span data-count="8">8</span></div>
           <div class="stat-label">Selected projects</div>
         </div>
         <div data-reveal style="--d:160ms">
@@ -455,80 +455,159 @@
     </section>
 
     <!-- ============ WORK / PROJECTS ============ -->
-    <section id="work" class="section">
+    <section id="work" class="section" aria-labelledby="work-title">
       <div class="container">
-        <div class="section-head" data-reveal>
+        <div class="section-head work-heading" data-reveal>
           <span class="section-label">Selected Work</span>
-          <h2 class="section-title">Projects I've designed &amp; built.</h2>
-          <p class="section-sub">Real products — from e-learning and e-commerce to government systems.</p>
+          <h2 class="section-title" id="work-title">Web applications. Real-world solutions.</h2>
+          <p class="section-sub">Explore my work across education, healthcare, e-commerce, public services, and business management.</p>
         </div>
 
-        <div class="project-filters" role="toolbar" aria-label="Filter projects">
-          <button class="filter-btn active" type="button" data-filter="all">All</button>
-          <button class="filter-btn" type="button" data-filter="web">Web Applications</button>
-          <button class="filter-btn" type="button" data-filter="management">Management Systems</button>
-          <button class="filter-btn" type="button" data-filter="other">Other Projects</button>
+        <div class="work-toolbar">
+          <div class="project-filters" role="group" aria-label="Filter projects">
+            <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All projects</button>
+            <button class="filter-btn" type="button" data-filter="web" aria-pressed="false">Web applications</button>
+            <button class="filter-btn" type="button" data-filter="management" aria-pressed="false">Management systems</button>
+            <button class="filter-btn" type="button" data-filter="other" aria-pressed="false">Websites</button>
+          </div>
+          <p class="project-count" id="projectCount" role="status" aria-live="polite">8 projects</p>
         </div>
         <div class="work-grid">
-          <button class="project-card" data-reveal data-img="assets/img/portfolio/edtecheqa.png" data-title="Edtech E-Learning Portal" data-cat="Web Development" data-desc="A full-featured e-learning platform for online education, with course management, student dashboards and a learning environment." data-role="Full-Stack Development" data-url="https://edtecheqra.com/front" data-tags="Laravel|MySQL|JavaScript|jQuery|SEO">
-            <span class="project-thumb"><img src="assets/img/portfolio/edtecheqa.png" alt="Edtech E-Learning Portal" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
-            <span class="project-body">
-              <span class="project-cat">Web Development</span>
+          <article class="project-card" data-reveal data-filter-group="web" data-img="assets/img/portfolio/edtecheqa.png" data-title="Edtech E-Learning Portal" data-cat="Education" data-desc="An online learning portal for educational content and course access." data-url="https://edtecheqra.com/front" data-tags="Laravel|MySQL|Bootstrap">
+            <div class="project-thumb">
+              <img src="assets/img/portfolio/edtecheqa.png" alt="Edtech E-Learning Portal — website preview" loading="lazy" decoding="async" width="640" height="400">
+              <span class="project-number" aria-hidden="true">01</span>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Education</span>
               <h3>Edtech E-Learning Portal</h3>
-              <p>An online learning platform with courses, dashboards and management tools.</p>
-              <span class="project-tags"><span>Laravel</span><span>MySQL</span><span>jQuery</span><span>SEO</span></span>
-            </span>
-          </button>
+              <p>An online learning portal for educational content and course access.</p>
+              <ul class="project-tags" aria-label="Technologies used"><li>Laravel</li><li>MySQL</li><li>Bootstrap</li></ul>
+              <div class="project-actions">
+                <button class="project-details" type="button" aria-label="View details of Edtech E-Learning Portal" aria-haspopup="dialog">View details <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                <a class="project-live" href="https://edtecheqra.com/front" target="_blank" rel="noopener noreferrer" aria-label="Visit Edtech E-Learning Portal (opens in a new tab)">Visit website <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
 
-          <button class="project-card" data-reveal style="--d:80ms" data-img="assets/img/portfolio/patientSystem.png" data-title="Doctor Prescription System" data-cat="Health · Web App" data-desc="A digital prescription and patient management system that streamlines doctor workflows and medical record handling." data-role="Frontend & Backend Development" data-url="https://doctor.hamdardgroup.com/" data-tags="Laravel|Angular|Tailwind CSS">
-            <span class="project-thumb"><img src="assets/img/portfolio/patientSystem.png" alt="Doctor Prescription System" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
-            <span class="project-body">
-              <span class="project-cat">Health · Web App</span>
+          <article class="project-card" data-reveal data-filter-group="management" data-img="assets/img/portfolio/patientSystem.png" data-title="Doctor Prescription System" data-cat="Healthcare" data-desc="A web application for managing patient information and doctor prescriptions." data-url="https://doctor.hamdardgroup.com/" data-tags="Laravel|Angular|Tailwind CSS">
+            <div class="project-thumb">
+              <img src="assets/img/portfolio/patientSystem.png" alt="Doctor Prescription System — website preview" loading="lazy" decoding="async" width="640" height="400">
+              <span class="project-number" aria-hidden="true">02</span>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Healthcare</span>
               <h3>Doctor Prescription System</h3>
-              <p>Digital prescriptions and patient management for modern clinics.</p>
-              <span class="project-tags"><span>Laravel</span><span>Angular</span><span>Tailwind</span></span>
-            </span>
-          </button>
+              <p>A web application for managing patient information and doctor prescriptions.</p>
+              <ul class="project-tags" aria-label="Technologies used"><li>Laravel</li><li>Angular</li><li>Tailwind CSS</li></ul>
+              <div class="project-actions">
+                <button class="project-details" type="button" aria-label="View details of Doctor Prescription System" aria-haspopup="dialog">View details <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                <a class="project-live" href="https://doctor.hamdardgroup.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Doctor Prescription System (opens in a new tab)">Visit website <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
 
-          <button class="project-card" data-reveal style="--d:160ms" data-img="assets/img/portfolio/ageops.png" data-title="AGEOPS E-Tendering" data-cat="Government · Procurement" data-desc="An electronic tendering and procurement platform enabling transparent public bidding, tender publishing and vendor management." data-role="Full-Stack Development" data-url="https://tenders.ageops.af" data-tags="PHP|Node.js|Laravel|Angular|React|MariaDB|AWS">
-            <span class="project-thumb"><img src="assets/img/portfolio/ageops.png" alt="AGEOPS E-Tendering system" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
-            <span class="project-body">
-              <span class="project-cat">Government · Procurement</span>
+          <article class="project-card" data-reveal data-filter-group="management" data-img="assets/img/portfolio/ageops.png" data-title="AGEOPS E-Tendering" data-cat="Public procurement" data-desc="A government procurement platform for publishing and accessing tenders." data-url="https://tenders.ageops.af" data-tags="Laravel|Angular|React.js">
+            <div class="project-thumb">
+              <img src="assets/img/portfolio/ageops.png" alt="AGEOPS E-Tendering — website preview" loading="lazy" decoding="async" width="640" height="400">
+              <span class="project-number" aria-hidden="true">03</span>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Public procurement</span>
               <h3>AGEOPS E-Tendering</h3>
-              <p>A transparent e-tendering and procurement platform.</p>
-              <span class="project-tags"><span>Laravel</span><span>Angular</span><span>Node.js</span><span>AWS</span></span>
-            </span>
-          </button>
+              <p>A government procurement platform for publishing and accessing tenders.</p>
+              <ul class="project-tags" aria-label="Technologies used"><li>Laravel</li><li>Angular</li><li>React.js</li></ul>
+              <div class="project-actions">
+                <button class="project-details" type="button" aria-label="View details of AGEOPS E-Tendering" aria-haspopup="dialog">View details <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                <a class="project-live" href="https://tenders.ageops.af" target="_blank" rel="noopener noreferrer" aria-label="Visit AGEOPS E-Tendering (opens in a new tab)">Visit website <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
 
-          <button class="project-card" data-reveal data-img="assets/img/portfolio/afzon.png" data-title="Afzon E-commerce" data-cat="E-commerce" data-desc="An e-commerce marketplace with product catalog, cart and checkout built for online retail." data-role="Full-Stack Development" data-url="https://afzon.af/" data-tags="Laravel|Tailwind CSS|SEO">
-            <span class="project-thumb"><img src="assets/img/portfolio/afzon.png" alt="Afzon E-commerce website" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
-            <span class="project-body">
+          <article class="project-card" data-reveal data-filter-group="web" data-img="assets/img/portfolio/afzon.png" data-title="Afzon E-commerce" data-cat="E-commerce" data-desc="An online marketplace with a web experience for browsing products." data-url="https://afzon.af/" data-tags="Laravel|Tailwind CSS|SEO">
+            <div class="project-thumb">
+              <img src="assets/img/portfolio/afzon.png" alt="Afzon E-commerce — website preview" loading="lazy" decoding="async" width="640" height="400">
+              <span class="project-number" aria-hidden="true">04</span>
+            </div>
+            <div class="project-body">
               <span class="project-cat">E-commerce</span>
               <h3>Afzon E-commerce</h3>
-              <p>An online marketplace for browsing and buying products.</p>
-              <span class="project-tags"><span>Laravel</span><span>Tailwind</span><span>SEO</span></span>
-            </span>
-          </button>
+              <p>An online marketplace with a web experience for browsing products.</p>
+              <ul class="project-tags" aria-label="Technologies used"><li>Laravel</li><li>Tailwind CSS</li><li>SEO</li></ul>
+              <div class="project-actions">
+                <button class="project-details" type="button" aria-label="View details of Afzon E-commerce" aria-haspopup="dialog">View details <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                <a class="project-live" href="https://afzon.af/" target="_blank" rel="noopener noreferrer" aria-label="Visit Afzon E-commerce (opens in a new tab)">Visit website <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
 
-          <button class="project-card" data-reveal style="--d:80ms" data-img="assets/img/portfolio/baryatech.jpg" data-title="Barya Tech Website" data-cat="Corporate Website" data-desc="A corporate website for Barya Tech, delivering a clear brand presence and optimized web experience." data-role="Development & SEO" data-url="https://baryatech.com/" data-tags="WordPress|HTML/CSS|SEO">
-            <span class="project-thumb"><img src="assets/img/portfolio/baryatech.jpg" alt="Barya Tech corporate website" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
-            <span class="project-body">
-              <span class="project-cat">Corporate Website</span>
+          <article class="project-card" data-reveal data-filter-group="other" data-img="assets/img/portfolio/baryatech.jpg" data-title="Barya Tech Website" data-cat="Business website" data-desc="A corporate website presenting Barya Tech and its business online." data-url="https://baryatech.com/" data-tags="Laravel|Angular|SEO">
+            <div class="project-thumb">
+              <img src="assets/img/portfolio/baryatech.jpg" alt="Barya Tech Website — website preview" loading="lazy" decoding="async" width="640" height="400">
+              <span class="project-number" aria-hidden="true">05</span>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Business website</span>
               <h3>Barya Tech Website</h3>
-              <p>A polished corporate web presence for Barya Tech.</p>
-              <span class="project-tags"><span>WordPress</span><span>HTML/CSS</span><span>SEO</span></span>
-            </span>
-          </button>
+              <p>A corporate website presenting Barya Tech and its business online.</p>
+              <ul class="project-tags" aria-label="Technologies used"><li>Laravel</li><li>Angular</li><li>SEO</li></ul>
+              <div class="project-actions">
+                <button class="project-details" type="button" aria-label="View details of Barya Tech Website" aria-haspopup="dialog">View details <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                <a class="project-live" href="https://baryatech.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Barya Tech Website (opens in a new tab)">Visit website <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
 
-          <button class="project-card" data-reveal style="--d:160ms" data-img="assets/img/portfolio/aop.png" data-title="Lawyers Information Management System" data-cat="Government · Management System" data-desc="An information management system for lawyers that tracks records, registrations and case data." data-role="Full-Stack Development" data-url="http://gdcma.aop.gov.af/" data-tags="Laravel|MySQL|Bootstrap|AJAX">
-            <span class="project-thumb"><img src="assets/img/portfolio/aop.png" alt="Lawyers information management system" loading="lazy"><span class="project-open"><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span></span>
-            <span class="project-body">
-              <span class="project-cat">Government · Management</span>
-              <h3>Lawyers Info Management</h3>
-              <p>Manages lawyer records, registrations and case data.</p>
-              <span class="project-tags"><span>Laravel</span><span>MySQL</span><span>Bootstrap</span></span>
-            </span>
-          </button>
+          <article class="project-card" data-reveal data-filter-group="management" data-img="assets/img/portfolio/aop.png" data-title="GDCMA Information System" data-cat="Information management" data-desc="A system for managing information about community representatives (Wakil-e-Gozar). Application access is restricted." data-url="" data-tags="Laravel|Bootstrap">
+            <div class="project-thumb">
+              <img src="assets/img/portfolio/aop.png" alt="GDCMA Information System — website preview" loading="lazy" decoding="async" width="640" height="400">
+              <span class="project-number" aria-hidden="true">06</span>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Information management</span>
+              <h3>GDCMA Information System</h3>
+              <p>A system for managing information about community representatives (Wakil-e-Gozar).</p>
+              <ul class="project-tags" aria-label="Technologies used"><li>Laravel</li><li>Bootstrap</li></ul>
+              <div class="project-actions">
+                <button class="project-details" type="button" aria-label="View details of GDCMA Information System" aria-haspopup="dialog">View details <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                <span class="project-private">Restricted demo</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-filter-group="other" data-img="assets/img/portfolio/aopwebsite.png" data-title="AOP Website" data-cat="Government website" data-desc="The public website of the Administrative Office of the President, Afghanistan." data-url="https://aop.gov.af/pa" data-tags="Laravel|Bootstrap">
+            <div class="project-thumb">
+              <img src="assets/img/portfolio/aopwebsite.png" alt="AOP Website — website preview" loading="lazy" decoding="async" width="640" height="400">
+              <span class="project-number" aria-hidden="true">07</span>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Government website</span>
+              <h3>AOP Website</h3>
+              <p>The public website of the Administrative Office of the President, Afghanistan.</p>
+              <ul class="project-tags" aria-label="Technologies used"><li>Laravel</li><li>Bootstrap</li></ul>
+              <div class="project-actions">
+                <button class="project-details" type="button" aria-label="View details of AOP Website" aria-haspopup="dialog">View details <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                <a class="project-live" href="https://aop.gov.af/pa" target="_blank" rel="noopener noreferrer" aria-label="Visit AOP Website (opens in a new tab)">Visit website <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-filter-group="management" data-img="assets/img/portfolio/muhsingroup.png" data-title="Muhsingroup Store System" data-cat="Store management" data-desc="A web-based store management system built with Laravel and MySQL. A public application demo is not available." data-url="" data-tags="Laravel|MySQL|Bootstrap">
+            <div class="project-thumb">
+              <img src="assets/img/portfolio/muhsingroup.png" alt="Muhsingroup Store System — website preview" loading="lazy" decoding="async" width="640" height="400">
+              <span class="project-number" aria-hidden="true">08</span>
+            </div>
+            <div class="project-body">
+              <span class="project-cat">Store management</span>
+              <h3>Muhsingroup Store System</h3>
+              <p>A web-based store management system built with Laravel and MySQL.</p>
+              <ul class="project-tags" aria-label="Technologies used"><li>Laravel</li><li>MySQL</li><li>Bootstrap</li></ul>
+              <div class="project-actions">
+                <button class="project-details" type="button" aria-label="View details of Muhsingroup Store System" aria-haspopup="dialog">View details <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                <span class="project-private">Restricted demo</span>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -665,6 +744,6 @@
   <!-- Scroll to top -->
   <a href="#home" class="scroll-top" id="scrollTop" aria-label="Scroll back to top"><i class="bi bi-arrow-up" aria-hidden="true"></i></a>
 
-  <script src="assets/js/app.js"></script>
+  <script src="assets/js/app.js?v=20261105-work"></script>
 </body>
 </html>
