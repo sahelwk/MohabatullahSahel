@@ -237,6 +237,19 @@
       tags: (card.getAttribute("data-tags") || "").split("|")
     }));
   });
+
+  /* ---------- Project filters ---------- */
+  $$(".filter-btn").forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      $$(".filter-btn").forEach((b) => b.classList.toggle("active", b === button));
+      $$(".project-card").forEach((card) => {
+        const category = (card.dataset.cat || "").toLowerCase();
+        const group = card.dataset.filterGroup || (category.includes("management") || category.includes("government") ? "management" : category.includes("corporate") ? "other" : "web");
+        card.hidden = filter !== "all" && group !== filter;
+      });
+    });
+  });
   if (modal) {
     modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
@@ -245,22 +258,12 @@
   /* ---------- Contact form ---------- */
   const form = $("#contactForm");
   if (form) {
-    form.addEventListener("submit", async (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const status = $("#formStatus");
-      status.className = "form-status";
-      status.textContent = "Sending...";
-      try {
-        const res = await fetch(form.getAttribute("action"), { method: "POST", body: new FormData(form) });
-        const text = await res.text();
-        const ok = res.ok && text.includes("OK");
-        status.textContent = ok ? "Thank you! Your message has been sent." : "Sorry, something went wrong. Please email me directly.";
-        status.classList.add(ok ? "ok" : "err");
-        if (ok) form.reset();
-      } catch (err) {
-        status.textContent = "Connection unavailable. Please email me at mohabatullahsahel.afg@gmail.com";
-        status.classList.add("err");
-      }
+      const data = new FormData(form);
+      const subject = encodeURIComponent(data.get("subject") || "Portfolio enquiry");
+      const body = encodeURIComponent(`Name: ${data.get("name")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`);
+      window.location.href = `mailto:mohabatullahsahel.afg@gmail.com?subject=${subject}&body=${body}`;
     });
   }
 

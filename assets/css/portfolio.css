@@ -3,6 +3,11 @@
    Design System (self-contained, no template)
    ============================================================ */
 
+.project-filters { display:flex; flex-wrap:wrap; justify-content:center; gap:.6rem; margin:0 0 2rem; }
+.filter-btn { border:1px solid var(--border); background:var(--surface); color:var(--text-muted); border-radius:999px; padding:.65rem 1rem; cursor:pointer; font:inherit; transition:.2s ease; }
+.filter-btn:hover, .filter-btn.active { color:var(--bg); background:var(--accent); border-color:var(--accent); }
+.project-card[hidden] { display:none; }
+
 /* ---------- Design Tokens ---------- */
 :root {
   /* Fonts */
